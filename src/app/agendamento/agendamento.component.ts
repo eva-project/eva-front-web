@@ -15,7 +15,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {servico: 'Depilação a Laser', nome: 'Cristina Dias', dia: '21/09/2019', horario: '9:30'},
   {servico: 'Limpeza de Pele', nome: 'Maria Souza', dia: '25/09/2019', horario: '10:50'},
   {servico: 'Massagem', nome: 'Daiana Macedo', dia: '25/09/2019', horario: '16:30'},
-
+  {servico: 'Drenagem', nome: 'Carla Souza', dia: '26/09/2019', horario: '16:40'},
 ];
 
 @Component({
