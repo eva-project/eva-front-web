@@ -9,7 +9,7 @@ spec:
   - host: eva.encadeado.com
     http:
       paths:
-      - path: /.*
+      - path: /
         backend:
           serviceName: eva-frontend-web-svc
-          servicePort: 80
+          servicePort: 3000
