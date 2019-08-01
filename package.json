@@ -5,7 +5,7 @@
     "predocker:build": "npm run build",
     "docker:build": "docker image build . -t $npm_package_config_imageName:lts",
     "ng": "ng",
-    "start": "ng serve --proxy-config proxyconfig.json",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

@@ -6,30 +6,82 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {
+  MatCheckboxModule,
   MatButtonModule,
-  MatCardModule,
-  MatDialogModule,
-  MatFormFieldModule,
-  MatIconModule,
   MatInputModule,
-  MatListModule,
+  MatAutocompleteModule,
+  MatDatepickerModule,
+  MatFormFieldModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatMenuModule,
   MatSidenavModule,
-  MatSnackBarModule,
   MatToolbarModule,
-  MatTooltipModule
+  MatListModule,
+  MatGridListModule,
+  MatCardModule,
+  MatStepperModule,
+  MatTabsModule,
+  MatExpansionModule,
+  MatButtonToggleModule,
+  MatChipsModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
+  MatProgressBarModule,
+  MatDialogModule,
+  MatTooltipModule,
+  MatSnackBarModule,
+  MatTableModule,
+  MatSortModule,
+  MatPaginatorModule
 } from "@angular/material";
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CadastroComponent } from './cadastro/cadastro.component';
+import { LoginComponent } from './login/login.component';
+import { AgendamentoComponent } from './agendamento/agendamento.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CadastroComponent,
+    LoginComponent,
+    AgendamentoComponent
   ],
   imports: [
-    MatButtonModule,
-    MatToolbarModule,
-    MatIconModule,
     BrowserModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatStepperModule,
+    MatTabsModule,
+    MatExpansionModule,
+    MatButtonToggleModule,
+    MatChipsModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
+    MatDialogModule,
+    MatTooltipModule,
+    MatSnackBarModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule
