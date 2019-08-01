@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: app-frontend-ingress
+  namespace: prod
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - host: encadeado.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: app-frontend-svc-prod
+          servicePort: 3000
