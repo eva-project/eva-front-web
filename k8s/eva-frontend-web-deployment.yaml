@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-frontend-deployment
-  namespace: prod
+  name: eva-frontend-web-deployment
   labels:
-    app: app-frontend
+    app: eva-frontend-web
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: app-frontend
+      app: eva-frontend-web
   template:
     metadata:
       labels:
-        app: app-frontend
+        app: eva-frontend-web
     spec:
       containers:
-      - name: app-frontend
-        image: nexus.encadeado.com:5005/app/frontend:master.18
+      - name: eva-frontend-web
+        image: nexus.encadeado.com:5005/eva/frontend-web:latest
         ports:
         - containerPort: 3000
       imagePullSecrets:

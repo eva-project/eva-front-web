@@ -1,16 +1,15 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: app-frontend-ingress
-  namespace: dev
+  name: eva-frontend-web-ingress
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - host: dev.encadeado.com
+  - host: eva.encadeado.com
     http:
       paths:
       - path: /
         backend:
-          serviceName: app-frontend-svc-dev
+          serviceName: eva-frontend-web-svc
           servicePort: 3000
