@@ -17,8 +17,8 @@ export class AgendamentoService {
 
   constructor(private http: HttpClient) { }
 
-  agendamentoUrl = 'http://localhost:8000/api/services/list';
-  addAgendamentoUrl = 'http://localhost:8000/api/services/store';
+  agendamentoUrl = 'http://api.encadeado.com/api/services/list';
+  addAgendamentoUrl = 'http://api.encadeado.com/api/services/store';
 
 
   public getAgendamentos() {
