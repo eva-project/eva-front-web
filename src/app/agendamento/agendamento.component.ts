@@ -1,22 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { AgendamentoService } from '../service/agendamento.service';
+import { HttpHeaders } from '@angular/common/http';
+import { Agendamento } from './agendamento';
+import { MatTableDataSource } from '@angular/material';
+import { FormGroup, NgForm } from '@angular/forms';
 
-export interface PeriodicElement {
-  nome: string;
-  servico: string;
-  dia: string;
-  horario: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {servico: 'Depilação a Laser', nome: 'Maria Eduarda', dia: '10/09/2019', horario: '10:30'},
-  {servico: 'Limpeza de Pele', nome: 'Fernanda Araujo', dia: '12/09/2019', horario: '13:00'},
-  {servico: 'Drenagem', nome: 'Silvana Carvalho', dia: '18/09/2019', horario: '14:20'},
-  {servico: 'Terapia Capilar', nome: 'Joana Silva', dia: '19/09/2019', horario: '17:00'},
-  {servico: 'Depilação a Laser', nome: 'Cristina Dias', dia: '21/09/2019', horario: '9:30'},
-  {servico: 'Limpeza de Pele', nome: 'Maria Souza', dia: '25/09/2019', horario: '10:50'},
-  {servico: 'Massagem', nome: 'Daiana Macedo', dia: '25/09/2019', horario: '16:30'},
-  {servico: 'Drenagem', nome: 'Carla Souza', dia: '26/09/2019', horario: '16:40'},
-];
 
 @Component({
   selector: 'app-agendamento',
@@ -25,10 +13,47 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class AgendamentoComponent implements OnInit {
   displayedColumns: string[] = ['nome', 'servico', 'dia', 'horario'];
-  dataSource = ELEMENT_DATA;
-  constructor() { }
+  constructor(private agendamentoService: AgendamentoService) { }
 
   ngOnInit() {
+    this.showAgendamentosResponse();
+  }
+  ngAfterInit(){
+    
+  }
+  registerForm: FormGroup;
+  headers : string[];
+  agendamento: Agendamento[];
+  data: any = {}
+  onSubmit(f: NgForm) {
+    this.agendamentoService
+    .addAgendamento(this.data)
+    .subscribe(data => {this.agendamento.push(data);this.showAgendamentosResponse();});
+    f.resetForm();
+
+    
+  }
+
+  showAgendamentos() {
+    this.agendamentoService.getAgendamentos()
+    .subscribe((data: Agendamento[]) => this.agendamento = { ...data });
+
+  }
+
+  showAgendamentosResponse() {
+    this.agendamentoService.getAgendamentoResponse()
+      // resp is of type `HttpResponse<Config>`
+      .subscribe(resp => {
+        // display its headers
+        const keys = resp.headers.keys();
+        this.headers = keys.map(key =>
+          `${key}: ${resp.headers.get(key)}`);
+  
+        // access the body directly, which is typed as `Config`.
+        this.agendamento = resp.body
+        console.log(this.agendamento)
+
+      });
   }
 
 }

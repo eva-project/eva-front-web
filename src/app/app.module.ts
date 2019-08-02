@@ -41,6 +41,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { AgendamentoComponent } from './agendamento/agendamento.component';
+import { AgendamentoService } from './service/agendamento.service';
 
 
 @NgModule({
@@ -84,9 +85,11 @@ import { AgendamentoComponent } from './agendamento/agendamento.component';
     MatPaginatorModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule, AgendamentoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

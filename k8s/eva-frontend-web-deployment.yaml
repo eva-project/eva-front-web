@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
       - name: eva-frontend-web
-        image: nexus.encadeado.com:5005/eva/frontend-web:master.12
+        image: nexus.encadeado.com:5005/eva/frontend-web:master.5
         ports:
-        - containerPort: 3000
+        - containerPort: 80
       imagePullSecrets:
       - name: regcred
