@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 export class AppComponent {
-  title = 'app-frontend';
+  title = 'eva-front-web';
   value = ''
   nome : string
 
